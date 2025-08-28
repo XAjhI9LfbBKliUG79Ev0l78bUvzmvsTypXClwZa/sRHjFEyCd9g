@@ -29,7 +29,7 @@
               src="@/assets/photo.jpg"
               alt="Фотография Шкоды Алексея Игоревича"
               class="lawyer-photo"
-              loading="lazy"
+              fetchpriority="high"
               width="256"
               height="256"
             />
