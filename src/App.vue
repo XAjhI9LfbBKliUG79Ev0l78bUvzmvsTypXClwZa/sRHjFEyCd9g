@@ -1,6 +1,6 @@
 <template>
   <AppHeader />
-  <SvoNotification @open-svo-modal="openSvoModal" />
+  <SvoNotification @open-svo-modal="handleOpenSvoModal" />
   <RouterView v-slot="{ Component, route }">
     <transition name="fade" mode="out-in">
       <component :is="Component" :key="route.path" />
@@ -17,27 +17,25 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { RouterView } from "vue-router";
 import AppHeader from "@/components/AppHeader.vue";
 import AppFooter from "@/components/AppFooter.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
 import SvoNotification from "@/components/SvoNotification.vue";
 import ServiceModal from "@/components/ServiceModal.vue";
-import { svoNotificationData } from "@/data/serviceDetails.js";
+import { useModal } from "@/composables/useModal.js";
+import { modalConfig } from "@/config/index.js";
 
-const isSvoModalVisible = ref(false);
-const svoModalTitle = ref('');
-const svoModalDescription = ref([]);
+const {
+  isVisible: isSvoModalVisible,
+  title: svoModalTitle,
+  description: svoModalDescription,
+  openModal: openSvoModal,
+  closeModal: closeSvoModal,
+} = useModal();
 
-const openSvoModal = () => {
-  svoModalTitle.value = svoNotificationData.title;
-  svoModalDescription.value = svoNotificationData.detailedDescription;
-  isSvoModalVisible.value = true;
-};
-
-const closeSvoModal = () => {
-  isSvoModalVisible.value = false;
+const handleOpenSvoModal = () => {
+  openSvoModal(modalConfig.svo.title, modalConfig.svo.description);
 };
 </script>
 
