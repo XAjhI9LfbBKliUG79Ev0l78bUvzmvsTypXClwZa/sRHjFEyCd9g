@@ -4,14 +4,11 @@ import router from "./router";
 
 import "./assets/base.css";
 
-import IconCircleCheck from "@/components/icons/IconCircleCheck.vue";
-import IconExternalLink from "@/components/icons/IconExternalLink.vue";
+import globalComponents from "./plugins/globalComponents";
 
 const app = createApp(App);
 
-app.component("IconCircleCheck", IconCircleCheck);
-app.component("IconExternalLink", IconExternalLink);
-
 app.use(router);
+app.use(globalComponents);
 
 app.mount("#app");

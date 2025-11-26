@@ -184,8 +184,7 @@
 </template>
 
 <script setup>
-import { ref, shallowRef, computed } from "vue";
-import { RouterLink } from "vue-router";
+import { ref, computed } from "vue";
 import {
   servicesData as importedServicesData,
   faqsData,
