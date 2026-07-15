@@ -8,7 +8,7 @@
       :aria-controls="answerId"
       @click.prevent="toggleOpen"
     >
-      <span class="question-text">{{ question }}</span>
+      <h3 class="question-text">{{ question }}</h3>
       <span class="faq-icon" aria-hidden="true"></span>
     </summary>
     <div
@@ -122,6 +122,8 @@ const handleToggle = (event) => {
 .question-text {
   flex-grow: 1;
   padding-right: var(--spacing-sm);
+  margin: 0;
+  font-size: 1rem;
 }
 
 .faq-icon {
