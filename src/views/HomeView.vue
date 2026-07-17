@@ -159,7 +159,7 @@
                 <div>
                   <h3>Место приема:</h3>
                   <p>
-                    {{ contactInfo.workAddress }}<br />(Возможен выезд
+                    <a :href="contactInfo.workAddressLink" target="_blank" rel="noopener noreferrer">{{ contactInfo.workAddress }}</a><br />(Возможен выезд
                     по РФ)
                   </p>
                 </div>
