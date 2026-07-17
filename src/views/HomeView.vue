@@ -25,14 +25,17 @@
             >
           </div>
           <div class="intro-visual">
-            <img
-              src="@/assets/photo.jpg"
-              alt="Фотография Шкоды Алексея Игоревича"
-              class="lawyer-photo"
-              fetchpriority="high"
-              width="256"
-              height="256"
-            />
+            <picture>
+              <source srcset="@/assets/photo.webp" type="image/webp" />
+              <img
+                src="@/assets/photo.jpg"
+                alt="Адвокат Алексей Шкода"
+                class="lawyer-photo"
+                fetchpriority="high"
+                width="256"
+                height="256"
+              />
+            </picture>
             <div class="registry-info">
               <span class="registry-icon" aria-hidden="true">
                 <IconCircleDashedCheck aria-hidden="true" />

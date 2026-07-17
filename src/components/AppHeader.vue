@@ -11,6 +11,7 @@
           src="@/assets/logo.svg"
           alt=""
           class="logo-image"
+          aria-hidden="true"
           width="40"
           height="40"
         />

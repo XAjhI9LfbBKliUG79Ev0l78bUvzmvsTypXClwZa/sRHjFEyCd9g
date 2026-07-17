@@ -5,7 +5,11 @@
         © <span>{{ currentYear }}</span> Шкода Алексей Игоревич. Информация на
         сайте не является публичной офертой и носит информационный характер.
       </p>
-      <a href="#top" class="back-to-top" @click.prevent="scrollToTop"
+      <a
+        href="#top"
+        class="back-to-top"
+        aria-label="Вернуться к началу страницы"
+        @click.prevent="scrollToTop"
         >Наверх ↑</a
       >
     </div>
