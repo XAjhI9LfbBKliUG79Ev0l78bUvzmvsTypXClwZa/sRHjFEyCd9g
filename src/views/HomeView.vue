@@ -113,70 +113,80 @@
               Прием по предварительной договоренности.
             </p>
             <address class="contact-details">
-              <div class="contact-item">
-                <span class="contact-icon" aria-hidden="true">
-                  <IconPhone aria-hidden="true" />
-                </span>
-                <div>
-                  <h3>Телефон:</h3>
-                  <p><a :href="`tel:${contactInfo.phoneNumber}`">{{ contactInfo.formattedPhoneNumber }}</a></p>
+              <div class="contact-grid">
+                <div class="contact-channels">
+                  <div class="contact-item">
+                    <span class="contact-icon" aria-hidden="true">
+                      <IconPhone aria-hidden="true" />
+                    </span>
+                    <div class="contact-item-content">
+                      <h3>Телефон:</h3>
+                      <p><a :href="`tel:${contactInfo.phoneNumber}`">{{ contactInfo.formattedPhoneNumber }}</a></p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <span class="contact-icon" aria-hidden="true">
+                      <IconMail aria-hidden="true" />
+                    </span>
+                    <div class="contact-item-content">
+                      <h3>Email:</h3>
+                      <p>
+                        <a
+                          :href="`mailto:${contactInfo.emailAddress}?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%8E%D1%80%D0%B8%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D0%B8`"
+                          >{{ contactInfo.emailAddress }}</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <span class="contact-icon" aria-hidden="true">
+                      <IconMessageCircle aria-hidden="true" />
+                    </span>
+                    <div class="contact-item-content">
+                      <h3>Signal:</h3>
+                      <p>
+                        <a
+                          :href="contactInfo.signalLink"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >Написать в Signal</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="contact-location">
+                  <div class="contact-item">
+                    <span class="contact-icon" aria-hidden="true">
+                      <IconMapPin aria-hidden="true" />
+                    </span>
+                    <div class="contact-item-content">
+                      <h3>Место приема:</h3>
+                      <p>
+                        <a :href="contactInfo.workAddressLink" target="_blank" rel="noopener noreferrer">{{ contactInfo.workAddress }}</a><br />
+                        <small>(Возможен выезд по РФ)</small>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="contact-item">
-                <span class="contact-icon" aria-hidden="true">
-                  <IconMail aria-hidden="true" />
-                </span>
-                <div>
-                  <h3>Email:</h3>
-                  <p>
-                    <a
-                      :href="`mailto:${contactInfo.emailAddress}?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%8E%D1%80%D0%B8%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D0%B8&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9%20%D0%98%D0%B3%D0%BE%D1%80%D0%B5%D0%B2%D0%B8%D1%87.%0A%0A%D0%9E%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5%20%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%BE%20%D0%92%D0%B0%D1%88%D1%83%20%D1%81%D0%B8%D1%82%D1%83%D0%B0%D1%86%D0%B8%D1%8E%20%D0%B8%20%D0%B6%D0%B5%D0%BB%D0%B0%D0%B5%D0%BC%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B8.%0A%0A%D0%A1%20%D1%83%D0%B2%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC%2C%0A%5B%D0%92%D0%B0%D1%88%D0%B5%20%D0%B8%D0%BC%D1%8F%5D%0A%5B%D0%92%D0%B0%D1%88%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%BD%D1%8B%D0%B9%20%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%5D`"
-                      >{{ contactInfo.emailAddress }}</a
-                    >
-                  </p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <span class="contact-icon" aria-hidden="true">
-                  <IconMessageCircle aria-hidden="true" />
-                </span>
-                <div>
-                  <h3>Signal (защищенная связь):</h3>
-                  <p>
-                    <a
-                      :href="contactInfo.signalLink"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Написать в Signal</a
-                    >
-                  </p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <span class="contact-icon" aria-hidden="true">
-                  <IconMapPin aria-hidden="true" />
-                </span>
-                <div>
-                  <h3>Место приема:</h3>
-                  <p>
-                    <a :href="contactInfo.workAddressLink" target="_blank" rel="noopener noreferrer">{{ contactInfo.workAddress }}</a><br />(Возможен выезд
-                    по РФ)
-                  </p>
+
+              <div class="contact-additional-links" style="margin-top: var(--spacing-lg);">
+                <div class="harant-badge">
+                  <a
+                    href="https://harant.ru/lawyers/saratov/shkoda-aleksej-igorevich/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="harant-link"
+                  >
+                    <img src="@/assets/favicon_harant.svg" alt="" aria-hidden="true" />
+                    <span>Отзывы и профиль на Harant.ru</span>
+                  </a>
                 </div>
               </div>
             </address>
           </div>
-        </div>
-        <div class="resource-links" style="text-align: center; margin-top: 1.5rem;">
-          <a
-            href="https://harant.ru/lawyers/saratov/shkoda-aleksej-igorevich/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit; font-weight: 500;"
-          >
-            <img src="@/assets/favicon_harant.svg" alt="Harant.ru" style="width: 24px; height: 24px;" />
-            Harant.ru
-          </a>
         </div>
       </div>
     </section>
@@ -615,15 +625,63 @@ const closeServiceModal = () => {
   margin-inline: auto;
   transition: color var(--transition-base);
 }
-.contact-details {
-  display: flex;
-  flex-direction: column;
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--spacing-lg);
 }
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+  }
+}
+
+.contact-channels,
+.contact-location {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
 .contact-item {
   display: flex;
   align-items: flex-start;
   gap: var(--spacing-md);
+}
+
+.contact-item-content h3 {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.contact-item-content p {
+  margin: 0;
+}
+
+.harant-badge {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-background-soft);
+}
+
+.harant-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  color: var(--color-heading);
+  font-weight: 500;
+  font-size: var(--font-size-base);
+}
+
+.harant-link img {
+  width: 20px;
+  height: 20px;
 }
 .contact-icon {
   color: var(--color-primary-dark);
