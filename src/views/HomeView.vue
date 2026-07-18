@@ -167,6 +167,17 @@
             </address>
           </div>
         </div>
+        <div class="resource-links" style="text-align: center; margin-top: 1.5rem;">
+          <a
+            href="https://harant.ru/lawyers/saratov/shkoda-aleksej-igorevich/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit; font-weight: 500;"
+          >
+            <img src="@/assets/favicon_harant.svg" alt="Harant.ru" style="width: 24px; height: 24px;" />
+            Harant.ru
+          </a>
+        </div>
       </div>
     </section>
 
