@@ -47,9 +47,9 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="registry-link"
-                  aria-label="Проверить регистрационный номер 2344 в реестре"
+                  aria-label="Проверить регистрационный номер 64/2344 в реестре"
                 >
-                  № 2344
+                  № 64/2344
                   <span class="link-indicator" aria-hidden="true">
                     <IconExternalLink />
                   </span>
@@ -138,22 +138,6 @@
                       </p>
                     </div>
                   </div>
-                  <div class="contact-item">
-                    <span class="contact-icon" aria-hidden="true">
-                      <IconMessageCircle aria-hidden="true" />
-                    </span>
-                    <div class="contact-item-content">
-                      <h3>Signal:</h3>
-                      <p>
-                        <a
-                          :href="contactInfo.signalLink"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          >Написать в Signal</a
-                        >
-                      </p>
-                    </div>
-                  </div>
                 </div>
 
                 <div class="contact-location">
@@ -227,7 +211,6 @@ import IconScale from "@/components/icons/IconScale.vue";
 import IconLockAccess from "@/components/icons/IconLockAccess.vue";
 import IconPhone from "@/components/icons/IconPhone.vue";
 import IconMail from "@/components/icons/IconMail.vue";
-import IconMessageCircle from "@/components/icons/IconMessageCircle.vue";
 import IconMapPin from "@/components/icons/IconMapPin.vue";
 
 const iconMap = {
